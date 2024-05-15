@@ -13,18 +13,19 @@
         <?php 
 
         include "conexao.php";
-        $nome = $_POST['nomealu']; 
-        $seriealu = $_POST['seriealu'];
-        $cursoalu = $_POST['cursoalu'];
-        $livro = $_POST['livro'];
-        $rtombo = $_POST['rtombo'];
-        $datempr = $_POST['dtempres'];
-        $datdevo = $_POST['dtdevo'];
+        $nomes = $_POST['nomealu']; 
+        $seriealus = $_POST['seriealu'];
+        $cursoalus = $_POST['cursoalu'];
+        $livros = $_POST['livro'];
+        $rtombos = $_POST['rtombo'];
+        $datemprs = $_POST['dtempres'];
+        $datdevos = $_POST['dtdevo'];
         
         
-        $sql = "INSERT INTO registro(nomealuno,seriealuno,cursoaluno,livro,Rtombo,datemprestimo,datdevolucao)
-        VALUES('$nome','$seriealu','$cursoalu','$livro','$rtombo','$datempr','$datdevo')";
-        if($sql = mysqli_query($conexao,$sql)){
+        
+        $sqli = "INSERT INTO registro(nomealuno,seriealuno,cursoaluno,livro,Rtombo,datemprestimo,datdevolucao)
+        VALUES('$nomes','$seriealus','$cursoalus','$livros','$rtombos','$datemprs','$datdevos')";
+        if($sqli = mysqli_query($conexao,$sqli)){
 
             echo("$nome cadastrado com sucesso!");
         }
