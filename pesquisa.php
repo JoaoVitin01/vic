@@ -134,10 +134,9 @@
         $sqli = "SELECT * FROM registro WHERE nomealuno LIKE '%$pesquisas%'";
         $dados = mysqli_query($conexao, $sqli);
 
-        // Verifica se houve erro na execução da consulta SQL
         if (!$dados) {
             echo "Erro na consulta SQL: " . mysqli_error($conexao);
-            exit; // Encerra a execução do script em caso de erro
+            exit;
         }
         ?>
 
@@ -166,8 +165,8 @@
                             <td><?php echo $linha['datemprestimo']; ?></td>
                             <td><?php echo $linha['datdevolucao']; ?></td>
                             <td>
-                                <a href="#" class="btn btn-success">Editar</a>
-                                <a href="#" class="btn btn-danger">Excluir</a>
+                                <a href="editar.php?id_registro=<?php echo $linha['cod_rigistro']; ?>" class="btn btn-success">Editar</a>
+                                <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_rigistro']; ?>)" class="btn btn-danger">Excluir</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
@@ -182,6 +181,31 @@
 
     <?php mysqli_free_result($dados); ?>
 
+    <!-- Modal de confirmação de exclusão -->
+    <div id="modal-confirmacao" class="modal">
+        <div class="modal-content">
+            <h4>Confirmar Exclusão</h4>
+            <p>Você tem certeza que deseja excluir este registro?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-close btn">Cancelar</a>
+            <a id="excluir-btn" href="#" class="btn btn-danger">Excluir</a>
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+
+        function confirmarExclusao(id_registro) {
+            $('#excluir-btn').attr('href', 'excluir_registro.php?id_registro=' + id_registro);
+            $('#modal-confirmacao').modal('open');
+        }
+    </script>
 </body>
 
 </html>
