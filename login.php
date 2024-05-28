@@ -12,18 +12,15 @@
         <form action="vallogin.php" method="POST" class="formLogin">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label for="nome">nome</label>
-            <input type="nome" placeholder="Digite seu nome" autofocus="true" />
-           <label for="email">email</label>
-          <input type="email" placeholder="Digite seu email" autofocus="true" />
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" placeholder="Digite seu nome" autofocus="true" />
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Digite seu email" />
             <label for="password">Senha</label>
-            <input type="password" placeholder="Digite sua senha" />
-            <a href="">Esqueci minha senha</a>
+            <input type="password" name="senha" placeholder="Digite sua senha" />
+            <a href="#">Esqueci minha senha</a>
             <input type="submit" value="Acessar" class="btn" />
-
         </form>
-        </div>
-
-    
+    </div>
 </body>
 </html>

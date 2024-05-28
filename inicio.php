@@ -15,16 +15,8 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="#">Página Inicial</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Produtos</a>
-                    <div class="dropdown-content">
-                        <a href="#">Produto 1</a>
-                        <a href="#">Produto 2</a>
-                        <a href="#">Produto 3</a>
-                    </div>
-                </li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="registro.php">Registrar Emprestimo</a></li>
+                <li><a href="pesquisa.php">Emprestimos</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>
         </div>
