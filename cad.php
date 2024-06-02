@@ -27,7 +27,7 @@
         VALUES('$nomes','$seriealus','$cursoalus','$livros','$rtombos','$datemprs','$datdevos')";
         if($sqli = mysqli_query($conexao,$sqli)){
 
-            echo("$nome cadastrado com sucesso!");
+            echo("$nomes cadastrado com sucesso!");
         }
         else{
             echo("erro ao cadastrar usuario");

@@ -119,7 +119,11 @@
 
 <body>
 
-    <div class="container">
+ 
+<div class="container">
+    <div class="row">
+      <div class="col">
+
         <h1>Pesquisa</h1>
 
         <form class="search-form" action="pesquisa.php" method="post">
@@ -206,6 +210,9 @@
             $('#modal-confirmacao').modal('open');
         }
     </script>
+    </div>
+    </div>
+    </div>
 </body>
 
 </html>
