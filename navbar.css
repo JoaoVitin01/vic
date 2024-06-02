@@ -1,3 +1,4 @@
+
 @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
 .menu, .menu-bar {
     position: fixed;
@@ -136,4 +137,47 @@
   .menu{
         height:3.5em;
     }
+}
+
+/* Estilo para o cabeçalho */
+.header {
+  background-color: #333; /* Cor de fundo do cabeçalho */
+  color: white; /* Cor do texto no cabeçalho */
+  padding: 10px; /* Espaçamento interno do cabeçalho */
+  width: 100%; /* Ocupa toda a largura da tela */
+  box-sizing: border-box; /* Inclui o padding na largura total */
+  margin: 0; /* Remove as margens padrão */
+}
+
+/* Estilo para o corpo principal */
+.main {
+  padding: 20px; /* Espaçamento interno do corpo principal */
+}
+
+/* Estilo para o rodapé */
+.footer {
+  background-color: #333; /* Cor de fundo do rodapé */
+  color: white; /* Cor do texto no rodapé */
+  padding: 10px; /* Espaçamento interno do rodapé */
+  position: fixed; /* Fixa o rodapé na parte inferior da tela */
+  width: 100%; /* Faz o rodapé ocupar toda a largura da tela */
+  bottom: 0; /* Posiciona o rodapé no fundo da tela */
+  text-align: center; /* Alinha o texto no centro */
+}
+.textfooter{
+  margin: 0; /* Remove as margens padrão */
+}
+.responsive-img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner pai */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Remove espaços em branco ao redor da imagem */
+  margin: 0; /* Centraliza a imagem horizontalmente */
+}
+body {
+  margin: 0;
+  background-color: #d8c785;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
 }
