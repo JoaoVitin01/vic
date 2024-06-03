@@ -3,9 +3,12 @@
 
     <head>
       <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+     <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
+
+
+      <link rel="stylesheet" type="text/css" href="registro.css">
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,11 +19,11 @@
 
 
       <div class="container">
-       
+      <a href="menu.php"><img src="img/return.png"></a>
       
 
 
-      <h1>Cadastre-se</h1>
+      <h1>Fazer Registro</h1>
       <form action="cad.php" method="post">
         <div class=>
           <label for="nomealuno" class="form-label">Nome do Aluno</label>
@@ -52,7 +55,9 @@
 
           <!--JavaScript at end of body for optimized loading-->
           <script type="text/javascript" src="js/materialize.min.js"></script>
+          
         </div>
+        
     </body>
 
     </html>

@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-</head>
+
 <body>
 
 <div class="container">
@@ -18,14 +18,13 @@
 <header class="header">
   teste
 </header>
-<main class="main">
- <!-- <img src="img/1.jpg" alt="" class="responsive-img"> -->
+
 <ul class="menu">
 
       <li title="home"><a href="#" class="menu-button home">menu</a></li>
       
-      <li title="pesquisar"><a href="#" class="search">pesquisa</a></li>
-      <li title="pencil"><a href="#" class="pencil">pencil</a></li>
+      <li title="pesquisar"><a href="pesquisa.php" class="search">pesquisa</a></li>
+      <li title="Fazer Registro"><a href="registro.php" class="pencil">Fazer Registro</a></li>
       <li title="about"><a href="#" class="active about">about</a></li>
       <li title="archive"><a href="#" class="archive">archive</a></li>
       <li title="contact"><a href="#" class="contact">contact</a></li>
@@ -38,7 +37,6 @@
         <li><a href="#">Editorial</a></li>
         <li><a href="#">About</a></li>
     </ul>
-    </main>
     </div>
     </div>
   </div>
