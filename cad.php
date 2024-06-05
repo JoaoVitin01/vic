@@ -36,7 +36,7 @@
         
         ?>
         <hr>
-         <a href="inicio.php" class="btn btn-primary">voltar</a>
+         <a href="menu.php" class="btn btn-primary">voltar</a>
 
       
 

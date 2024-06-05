@@ -16,7 +16,7 @@
         }
 
         .container {
-            max-width: 90%;
+            max-width: 1300px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
@@ -89,12 +89,12 @@
         }
 
         .btn-danger {
-            background-color: brown;
-        }
+    background-color: rgb(238, 44, 44);
+}
 
-        .btn-danger:hover {
-            background-color: #bd2130;
-        }
+.btn-danger:hover {
+    background-color: rgb(219, 64, 64);
+}
 
         .modal-close.btn {
             background-color: bisque;

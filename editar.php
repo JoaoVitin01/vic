@@ -37,14 +37,18 @@ if (isset($_GET['id_registro'])) {
 <head>
     <meta charset="UTF-8">
     <title>Editar Registro</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="editcss.css">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-    <h2>Editar Registro</h2>
+
     <form action="atualizar.php" method="post">
+    <a href="pesquisa.php"><img src="img/return.png"></a>
+    <h2>Editar Registro</h2>
+  
         <!-- Campos do formulário preenchidos com os dados do registro -->
         <input type="hidden" name="id_registro" value="<?php echo $id_registro; ?>">
         <label for="nomealuno">Nome do Aluno:</label><br>
