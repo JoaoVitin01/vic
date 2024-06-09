@@ -63,9 +63,9 @@
             border-radius: 4px;
             font-size: 14px;
             transition: background-color 0.3s;
-            min-width: 100px; /* Garante que os botões tenham o mesmo tamanho mínimo */
-            line-height: 25px; /* Centraliza o texto verticalmente */
-            text-align: center; /* Centraliza o texto horizontalmente */
+            min-width: 100px;
+            line-height: 25px;
+            text-align: center;
         }
 
         .btn:hover {
@@ -89,12 +89,12 @@
         }
 
         .btn-danger {
-    background-color: rgb(238, 44, 44);
-}
+            background-color: rgb(238, 44, 44);
+        }
 
-.btn-danger:hover {
-    background-color: rgb(219, 64, 64);
-}
+        .btn-danger:hover {
+            background-color: rgb(219, 64, 64);
+        }
 
         .modal-close.btn {
             background-color: bisque;
@@ -103,16 +103,16 @@
 
         /* Estilo para o modal */
         .modal {
-            max-width: 90%; /* Define a largura máxima do modal */
+            max-width: 90%;
         }
 
         .modal-content {
-            padding: 20px; /* Adiciona um preenchimento interno ao conteúdo do modal */
+            padding: 20px;
         }
 
         .modal-footer {
-            padding: 10px 20px; /* Adiciona um preenchimento interno ao rodapé do modal */
-            justify-content: flex-end; /* Alinha os itens do rodapé à direita */
+            padding: 10px 20px;
+            justify-content: flex-end;
         }
 
         .modal-close.btn:hover {
@@ -224,8 +224,8 @@
                                     <td><?php echo $linha['datemprestimo']; ?></td>
                                     <td><?php echo $linha['datdevolucao']; ?></td>
                                     <td>
-                                        <a href="editar.php?id_registro=<?php echo $linha['cod_rigistro']; ?>" class="btn btn-success">Editar</a>
-                                        <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_rigistro']; ?>)" class="btn btn-danger">Excluir</a>
+                                        <a href="editar.php?id_registro=<?php echo $linha['cod_registro']; ?>" class="btn btn-success">Editar</a>
+                                        <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_registro']; ?>)" class="btn btn-danger">Excluir</a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

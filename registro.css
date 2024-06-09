@@ -51,3 +51,13 @@ h1 {
 .btn:hover {
     background-color:blanchedalmond;
 }
+.alert {
+    width: 60%;
+    margin: 20px auto; /* Centraliza verticalmente e alinha ao centro horizontalmente */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 10px; /* Adiciona algum espaçamento interno */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    background-color: bisque; /* Cor de fundo para mensagens de erro */
+    color: rgb(0, 0, 0); /* Cor do texto para mensagens de erro */
+    border: 1px solid #000000; /* Adiciona uma borda */
+}
