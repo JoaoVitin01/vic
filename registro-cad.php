@@ -99,7 +99,23 @@
         <input type="text" class="form-control" name="nomealu"><br>
 
         <label for="seriealuno" class="form-label">Serie do aluno</label>
-        <input type="text" class="form-control" name="seriealu"><br>
+<select name="seriealu" class="form-control">
+<option value="selecione">selecione..</option>
+  <option value="1a">1A</option>
+  <option value="1b">1B</option>
+  <option value="1c">1C</option>
+  <option value="1d">1D</option>
+  <option value="2a">2A</option>
+  <option value="2b">2B</option>
+  <option value="2c">2C</option>
+  <option value="2d">2D</option>
+  <option value="3a">3A</option>
+  <option value="3b">3B</option>
+  <option value="3c">3C</option>
+  <option value="3d">3D</option>
+  <!-- Repita o mesmo padrão para as outras séries -->
+</select><br>
+
 
         <label for="cursoaluno" class="form-label">Curso do Aluno</label>
         <input type="text" class="form-control" name="cursoalu"><br>

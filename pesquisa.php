@@ -226,6 +226,22 @@
                                     <td>
                                         <a href="editar.php?id_registro=<?php echo $linha['cod_registro']; ?>" class="btn btn-success">Editar</a>
                                         <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_registro']; ?>)" class="btn btn-danger">Excluir</a>
+                                        <button class="waves-effect waves-light btn modal-trigger btn-salvar-pdf" data-target="modal-pdf">Salvar em PDF</button>
+
+<!-- Modal de confirmação para salvar em PDF -->
+<div id="modal-pdf" class="modal">
+    <div class="modal-content">
+        <h4>Salvar em PDF</h4>
+        <p>Tem certeza de que deseja salvar a lista em PDF?</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+        <a href="salvar_pdf.php" class="modal-close waves-effect waves-green btn-flat">Salvar</a>
+    </div>
+</div>
+
+                                    
+                                    
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
