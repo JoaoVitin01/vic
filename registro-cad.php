@@ -1,19 +1,21 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
- 
+ <!-- cad e registro integrado para poder aparer a mensaguem de alerta na mesma tela -->
 
   <link rel="stylesheet" type="text/css" href="registro.css">
 
-  <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
 </head>
 
 <body>
 
   <div class="container">
-    <a href="menu.php"><img src="img/return.png"></a>
+  <!-- botão de retorno img -->
+   <a href="menu.php"><img src="img/return.png"></a>
 
 
     <h1>Fazer Registro</h1>
@@ -21,8 +23,9 @@
     <?php
     include "conexao.php";
 
-    // Inicializa a mensagem
+    // Inicializa a mensagem e a classe de alerta
     $mensagem = '';
+    $classe_alerta = '';
 
     // Verifique se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -45,14 +48,17 @@
         // Consulta SQL para inserir os dados
         $sqli = "INSERT INTO registro (nomealuno, seriealuno, cursoaluno, livro, Rtombo, datemprestimo, datdevolucao)
                  VALUES ('$nomes', '$seriealus', '$cursoalus', '$livros', '$rtombos', '$datemprs', '$datdevos')";
-
+        // mensaguens de sucesso ou erro
         if (mysqli_query($conexao, $sqli)) {
           $mensagem = "$nomes cadastrado com sucesso!";
+          $classe_alerta = 'alert-success';
         } else {
           $mensagem = "Erro ao cadastrar usuário: " . mysqli_error($conexao);
+          $classe_alerta = 'alert-error';
         }
       } else {
         $mensagem = "Todos os campos são obrigatórios.";
+        $classe_alerta = 'alert-error';
       }
     }
 
@@ -61,11 +67,14 @@
     ?>
 
     <?php if (!empty($mensagem)) : ?>
-      <div class="alert">
+      <div class="alert <?php echo $classe_alerta; ?>">
         <?php echo $mensagem; ?>
       </div>
+      <?php if ($classe_alerta == 'alert-success') : ?>
+        <a href="pesquisa.php" class="btn btn-pesquisa">Ver Registro</a>
+      <?php endif; ?>
     <?php endif; ?>
-
+      <!-- formulario integrado -->
     <form action="" method="post">
       <div class=>
         <label for="nomealuno" class="form-label">Nome do Aluno</label>
@@ -95,14 +104,9 @@
         <input type="submit" class="btn btn-success">
 
 
-        <!--JavaScript at end of body for optimized loading-->
+        <!--JavaScript-->
         <script type="text/javascript" src="js/materialize.min.js"></script>
 
       </div>
 
-    </form>
-  </div>
-
-</body>
-
-</html>
+    </form
