@@ -442,3 +442,30 @@ select {
 @media only screen and (max-width: 496px) {
 
 }
+/* pequenos ajustes */
+.navbar-item-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centralizar horizontalmente */
+    height: 100%; /* Altura total do item */
+  }
+  .navbar-item-inner .material-icons {
+    margin-right: 8px;
+    color: #757575; /* Cor cinza */
+  }
+  .link-text {
+    color: #757575; /* Cor cinza para os textos */
+  }
+
+  /* Ajuste para o tamanho da imagem do logo */
+  .navbar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento abaixo do logo */
+  }
+
+  .navbar-logo img {
+    width: 50px; /* Defina o tamanho desejado */
+    height: auto; /* Mantenha a proporção */
+  }

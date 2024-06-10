@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+
+
     <div class="page">
         <form action="vallogin.php" method="POST" class="formLogin">
             <h1>Login</h1>

@@ -2,35 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Sticky responsive sidenav</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap'>
+  <title>Sticky Responsive Sidenav with Carousel</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap'>
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style>
-    /* pequenos ajustes */
-    .navbar-item-inner {
-      display: flex;
-      align-items: center;
-    }
-    .navbar-item-inner .material-icons {
-      margin-right: 8px;
-      color: #757575; /* Cor cinza */
-    }
-    .link-text {
-      color: #757575; /* Cor cinza para os textos */
+    /* Estilo para o carrossel */
+    .carousel-container {
+      width: 80%; /* Ajuste a largura conforme necessário */
+      margin: 20px auto; /* Centraliza o carrossel */
+      overflow: hidden;
+      position: relative;
     }
 
-    /* Ajuste para o tamanho da imagem do logo */
-    .navbar-logo {
+    .carousel-slide {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 20px; /* Espaçamento abaixo do logo */
+      transition: transform 0.5s ease;
     }
 
-    .navbar-logo img {
-      width: 50px; /* Defina o tamanho desejado */
-      height: auto; /* Mantenha a proporção */
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: cover; /* Mantém a proporção e preenche o contêiner */
+    }
+
+    /* Botões de navegação */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .carousel-btn.prev {
+      left: 0;
+    }
+
+    .carousel-btn.next {
+      right: 0;
+    }
+
+    /* Estilo para o conteúdo principal */
+    #main {
+      padding: 20px;
+      background-color: #f9f9f9;
+      width: calc(100% - 250px); /* Ajuste conforme necessário para sua barra lateral */
+      margin-left: 130px; /* Ajuste conforme necessário para sua barra lateral */
+      box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+    }
+
+    h2 {
+      margin-top: 0;
     }
   </style>
 </head>
@@ -45,13 +71,13 @@
       </a>
     </li>
     <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="#">
-        <i class="material-icons">list_alt</i> <!--todos os ""<1>" sao icones da google-->
+      <a class="navbar-item-inner flexbox-left" href="pesquisa.php">
+        <i class="material-icons">list_alt</i> <!--todos os ""<i>" sao icones da google-->
         <span class="link-text">Registros</span>
       </a>
     </li>
     <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="#">
+      <a class="navbar-item-inner flexbox-left" href="registro-cad.php">
         <i class="material-icons">note_add</i>
         <span class="link-text">Fazer registro</span>
       </a>
@@ -62,31 +88,51 @@
         <span class="link-text">Mensagens</span>
       </a>
     </li>
-    <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="#">
-        <i class="material-icons">dashboard</i>
-        <span class="link-text">Dashboard</span>
-      </a>
-    </li>
-    <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="#">
-        <i class="material-icons">person</i>
-        <span class="link-text">Perfil</span>
-      </a>
-    </li>
-    <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="#">
-        <i class="material-icons">settings</i>
-        <span class="link-text">Configurações</span>
-      </a>
-    </li>
   </ul>
 </nav>
 
 <!-- Main Content -->
 <main id="main" class="flexbox-col">
-  <h2>Lorem ipsum!</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum corporis, rerum doloremque iste sed voluptates omnis molestias molestiae animi recusandae labore sit amet delectus ad necessitatibus laudantium qui! Magni quisquam illum quaerat necessitatibus sint quibusdam perferendis! Aut ipsam cumque deleniti error perspiciatis iusto accusamus consequuntur assumenda. Obcaecati minima sed natus?</p>
+
+  <!-- Carrossel de imagens -->
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="img/1.jpg" alt="Imagem 1">
+      <img src="img/2.jpg" alt="Imagem 2">
+      <img src="img/3.jpg" alt="Imagem 3">
+    </div>
+    <div class="carousel-btn prev" onclick="prevSlide()">&#10094;</div>
+    <div class="carousel-btn next" onclick="nextSlide()">&#10095;</div>
+  </div>
 </main>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.carousel-slide img');
+
+  function showSlides() {
+    if (slideIndex >= slides.length) { slideIndex = 0 }
+    if (slideIndex < 0) { slideIndex = slides.length - 1 }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+    slides[slideIndex].style.display = 'block';
+    slideIndex++;
+  }
+
+  function prevSlide() {
+    slideIndex -= 2; // Retroceder dois índices porque a função showSlides incrementa o índice
+    showSlides();
+  }
+
+  function nextSlide() {
+    showSlides();
+  }
+
+  // Iniciar o carrossel
+  showSlides();
+  setInterval(showSlides, 3000); // Altere o valor para controlar a velocidade de transição
+</script>
+
 </body>
 </html>

@@ -153,3 +153,25 @@
             background-color: #0056b3;
         }
     </style>
+
+
+
+
+ <!-- <li class="navbar-item flexbox-left"> 
+      <a class="navbar-item-inner flexbox-left" href="#">
+        <i class="material-icons">dashboard</i>
+        <span class="link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="navbar-item flexbox-left">
+      <a class="navbar-item-inner flexbox-left" href="perfil.php">
+        <i class="material-icons">person</i>
+        <span class="link-text">Perfil</span>
+      </a>
+    </li>
+    <li class="navbar-item flexbox-left">
+      <a class="navbar-item-inner flexbox-left" href="#">
+        <i class="material-icons">settings</i>
+        <span class="link-text">Configurações</span>
+      </a>
+     </li> -->

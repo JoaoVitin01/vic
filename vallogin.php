@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $senha = $_POST['senha'];
 
         // Consultar o banco de dados para encontrar o usuário com o email fornecido
-        $sql = "SELECT * FROM `admusuario` WHERE `email` = '$email'";
+        $sql = "SELECT * FROM `usuarios` WHERE `email` = '$email'";
         $result = mysqli_query($conexao, $sql);
 
         if ($result) {
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Verificar se a senha está correta
                 if (password_verify($senha, $row['senha'])) {
                     // Senha correta, redirecionar para página de sucesso
-                    header("Location: inicio.php");
+                    header("Location: menu.php");
                     exit();
                 } else {
                     // Senha incorreta, redirecionar de volta para o formulário de login com uma mensagem de erro

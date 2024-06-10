@@ -1,35 +1,51 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
- <!-- cad e registro integrado para poder aparer a mensaguem de alerta na mesma tela -->
-
+  <meta charset="UTF-8">
+  <title>Registro</title>
   <link rel="stylesheet" type="text/css" href="registro.css">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+  <style>
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .alert {
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .alert-error {
+      background-color: #f2dede;
+      border-color: #ebccd1;
+      color: #a94442;
+    }
+
+    .alert-success {
+      background-color: #dff0d8;
+      border-color: #d6e9c6;
+      color: #3c763d;
+    }
+  </style>
 </head>
 
 <body>
 
   <div class="container">
-  <!-- botão de retorno img -->
-   <a href="menu.php"><img src="img/return.png"></a>
-
+    <a href="menu.php"><img src="img/return.png"></a>
 
     <h1>Fazer Registro</h1>
 
     <?php
     include "conexao.php";
 
-    // Inicializa a mensagem e a classe de alerta
     $mensagem = '';
     $classe_alerta = '';
 
-    // Verifique se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
       // Verifique se todos os campos obrigatórios estão preenchidos
       if (
         !empty($_POST['nomealu']) && !empty($_POST['seriealu']) &&
@@ -45,16 +61,19 @@
         $datemprs = $_POST['dtempres'];
         $datdevos = $_POST['dtdevo'];
 
-        // Consulta SQL para inserir os dados
-        $sqli = "INSERT INTO registro (nomealuno, seriealuno, cursoaluno, livro, Rtombo, datemprestimo, datdevolucao)
-                 VALUES ('$nomes', '$seriealus', '$cursoalus', '$livros', '$rtombos', '$datemprs', '$datdevos')";
-        // mensaguens de sucesso ou erro
-        if (mysqli_query($conexao, $sqli)) {
-          $mensagem = "$nomes cadastrado com sucesso!";
-          $classe_alerta = 'alert-success';
-        } else {
-          $mensagem = "Erro ao cadastrar usuário: " . mysqli_error($conexao);
+        if ($datdevos < date('Y-m-d')) {
+          $mensagem = "Data de devolução não pode ser no passado.";
           $classe_alerta = 'alert-error';
+        } else {
+          $sqli = "INSERT INTO registro (nomealuno, seriealuno, cursoaluno, livro, Rtombo, datemprestimo, datdevolucao)
+                   VALUES ('$nomes', '$seriealus', '$cursoalus', '$livros', '$rtombos', '$datemprs', '$datdevos')";
+          if (mysqli_query($conexao, $sqli)) {
+            $mensagem = "$nomes cadastrado com sucesso!";
+            $classe_alerta = 'alert-success';
+          } else {
+            $mensagem = "Erro ao cadastrar usuário: " . mysqli_error($conexao);
+            $classe_alerta = 'alert-error';
+          }
         }
       } else {
         $mensagem = "Todos os campos são obrigatórios.";
@@ -62,7 +81,6 @@
       }
     }
 
-    // Feche a conexão com o banco de dados
     mysqli_close($conexao);
     ?>
 
@@ -74,20 +92,17 @@
         <a href="pesquisa.php" class="btn btn-pesquisa">Ver Registro</a>
       <?php endif; ?>
     <?php endif; ?>
-      <!-- formulario integrado -->
+
     <form action="" method="post">
       <div class=>
         <label for="nomealuno" class="form-label">Nome do Aluno</label>
         <input type="text" class="form-control" name="nomealu"><br>
 
-
         <label for="seriealuno" class="form-label">Serie do aluno</label>
         <input type="text" class="form-control" name="seriealu"><br>
 
-
         <label for="cursoaluno" class="form-label">Curso do Aluno</label>
         <input type="text" class="form-control" name="cursoalu"><br>
-
 
         <label for="livro" class="form-label">Livro</label>
         <input type="text" class="form-control" name="livro"><br>
@@ -102,11 +117,25 @@
         <input type="date" class="form-control" name="dtdevo"> <br>
 
         <input type="submit" class="btn btn-success">
-
-
-        <!--JavaScript-->
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-
       </div>
+    </form>
+  </div>
 
-    </form
+  <script>
+    // Validação da data de devolução
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputDtDevolucao = document.querySelector('input[name="dtdevo"]');
+      inputDtDevolucao.addEventListener('change', function() {
+        const dataDevolucao = new Date(inputDtDevolucao.value);
+        const hoje = new Date();
+        if (dataDevolucao < hoje) {
+          alert('A data de devolução não pode ser no passado.');
+          inputDtDevolucao.value = ''; // Limpa o campo
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
