@@ -339,3 +339,4 @@
             }
         }
     </style>
+     width: calc(100% - 250px); /* Ajuste conforme necessário para sua barra lateral */
