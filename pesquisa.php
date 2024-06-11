@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -59,7 +59,7 @@
             margin-right: 5px;
             text-decoration: none;
             color: #333;
-            background-color: #007bff;
+            background-color: #c8e6c9; /* Novo background-color */
             border-radius: 4px;
             font-size: 14px;
             transition: background-color 0.3s;
@@ -69,35 +69,41 @@
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #a5d6a7; /* Novo background-color no hover */
         }
 
         .btn-info {
-            background-color: #17a2b8;
+            background-color: #b2ebf2; /* Novo background-color para btn-info */
+            color: #333; /* Novo color para btn-info */
         }
 
         .btn-info:hover {
-            background-color: #117a8b;
+            background-color: #80deea; /* Novo background-color no hover para btn-info */
         }
 
         .btn-success {
-            background-color: #28a745;
-        }
+    background-color: #b8bab6;
+    /* Novo background-color para btn-success */
+    color: #333;
+    /* Novo color para btn-success */
+}
 
         .btn-success:hover {
-            background-color: #218838;
+            background-color:  #b8bab7; /* Novo background-color no hover para btn-success */
         }
 
         .btn-danger {
-            background-color: #dc3545;
+            background-color: #ffcdd2; /* Novo background-color para btn-danger */
+            color: #333; /* Novo color para btn-danger */
         }
 
         .btn-danger:hover {
-            background-color: #c82333;
+            background-color: #ef9a9a; /* Novo background-color no hover para btn-danger */
         }
 
         .btn-salvar-pdf {
-            background-color: #007bff;
+            background-color: #b3e5fc; /* Novo background-color para btn-salvar-pdf */
+            color: #333; /* Novo color para btn-salvar-pdf */
             min-width: 100px;
             padding: 8px 16px;
             line-height: 25px;
@@ -105,12 +111,12 @@
         }
 
         .btn-salvar-pdf:hover {
-            background-color: #0056b3;
+            background-color: #81d4fa; /* Novo background-color no hover para btn-salvar-pdf */
         }
 
         .modal-close.btn {
-            background-color: #28a745;
-            border-color: #218838;
+            background-color: #b8bab6; /* Novo background-color para btn dentro do modal */
+            border-color: #c5e1a5; /* Novo border-color para btn dentro do modal */
         }
 
         /* Estilo para o modal */
@@ -128,7 +134,7 @@
         }
 
         .modal-close.btn:hover {
-            background-color: #218838;
+            background-color: #c5e1a5; /* Novo background-color no hover para btn dentro do modal */
         }
 
         p {
@@ -153,13 +159,13 @@
             padding: 8px 16px;
             border: none;
             border-radius: 4px;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #b8bab6; /* Novo background-color para search-button */
+            color: #fff; /* Novo color para search-button */
             cursor: pointer;
         }
 
         .search-button:hover {
-            background-color: #0056b3;
+            background-color: #b8bab7; /* Novo background-color no hover para search-button */
         }
 
         @media only screen and (max-width: 600px) {
@@ -171,6 +177,7 @@
                 width: 100%;
                 max-width: none;
             }
+
             h1 {
                 font-size: 20px;
             }

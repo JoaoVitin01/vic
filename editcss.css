@@ -36,7 +36,7 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    background-color: bisque;
+    background-color: #b8bab6;
     color: rgb(0, 0, 0);
     padding: 15px 20px;
     border: none;
@@ -47,5 +47,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: antiquewhite;
+    background-color: #b8bab7;
 }

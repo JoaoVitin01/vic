@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -29,6 +28,20 @@
       background-color: #dff0d8;
       border-color: #d6e9c6;
       color: #3c763d;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #c8e6c9; /* Novo background-color para botões */
+      color: #333; /* Novo color para botões */
+      cursor: pointer;
+      margin-top: 10px; /* Espaçamento superior */
+    }
+
+    .btn:hover {
+      background-color: #a5d6a7; /* Novo background-color no hover para botões */
     }
   </style>
 </head>

@@ -49,43 +49,52 @@ h1 {
 }
 
 .btn:hover {
-    background-color:blanchedalmond;
+    background-color: blanchedalmond;
 }
 
+
 /* botões alertas da tela de registro */
+
 .alert {
     width: 60%;
     margin: 20px auto;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
-  }
+}
 
-  .alert-success {
-    background-color: #d4edda; /* Cor de fundo para mensagens de sucesso */
-    color: #155724; /* Cor do texto para mensagens de sucesso */
-    border-color: #c3e6cb; /* Cor da borda para mensagens de sucesso */
-  }
+.alert-success {
+    background-color: #d4edda;
+    /* Cor de fundo para mensagens de sucesso */
+    color: #155724;
+    /* Cor do texto para mensagens de sucesso */
+    border-color: #c3e6cb;
+    /* Cor da borda para mensagens de sucesso */
+}
 
-  .alert-error {
-    background-color: #f8d7da; /* Cor de fundo para mensagens de erro */
-    color: #721c24; /* Cor do texto para mensagens de erro */
-    border-color: #f5c6cb; /* Cor da borda para mensagens de erro */
-     }
-   .btn-pesquisa {
-        display: block;
-        width: 150px;
-        margin: 20px auto;
-        background-color: bisque;
-        color: #000000;
-        text-decoration: none;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-        text-align: center;
-        padding: 10px 0;
-      }
-  
-      .btn-pesquisa:hover {
-        background-color: blanchedalmond;
-      }
+.alert-error {
+    background-color: #f8d7da;
+    /* Cor de fundo para mensagens de erro */
+    color: #721c24;
+    /* Cor do texto para mensagens de erro */
+    border-color: #f5c6cb;
+    /* Cor da borda para mensagens de erro */
+}
+
+.btn-pesquisa {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    background-color: #b8bab6;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.btn-pesquisa:hover {
+    background-color: #b8bab7;
+}
