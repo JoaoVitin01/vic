@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -82,11 +82,9 @@
         }
 
         .btn-success {
-    background-color: #b8bab6;
-    /* Novo background-color para btn-success */
-    color: #333;
-    /* Novo color para btn-success */
-}
+            background-color: #b8bab6; /* Novo background-color para btn-success */
+            color: #333; /* Novo color para btn-success */
+        }
 
         .btn-success:hover {
             background-color: #979797; /* Novo background-color no hover para btn-success */
@@ -118,7 +116,7 @@
             background-color: #b8bab6; /* Novo background-color para btn dentro do modal */
             border-color: #c5e1a5; /* Novo border-color para btn dentro do modal */
         }
-       
+
         /* Estilo para o modal */
         .modal {
             max-width: 90%;
@@ -257,8 +255,8 @@
                                     <td><?php echo htmlspecialchars($linha['cursoaluno']); ?></td>
                                     <td><?php echo htmlspecialchars($linha['livro']); ?></td>
                                     <td><?php echo htmlspecialchars($linha['Rtombo']); ?></td>
-                                    <td><?php echo htmlspecialchars($linha['datemprestimo']); ?></td>
-                                    <td><?php echo htmlspecialchars($linha['datdevolucao']); ?></td>
+                                    <td><?php echo date('d/m/Y', strtotime($linha['datemprestimo'])); ?></td>
+                                    <td><?php echo date('d/m/Y', strtotime($linha['datdevolucao'])); ?></td>
                                     <td>
                                         <a href="editar.php?id_registro=<?php echo $linha['cod_rigistro']; ?>" class="btn btn-success"><i class="material-icons">edit</i></a>
                                         <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_rigistro']; ?>)" class="btn btn-danger"><i class="material-icons">delete</i></a>
