@@ -14,7 +14,7 @@ if (isset($_GET['id_registro'])) {
 
         // Execute a consulta SQL
         if (mysqli_query($conexao, $sql)) {
-            echo "Registro excluído com sucesso.";
+           header("location:pesquisa.php");
         } else {
             echo "Erro ao excluir o registro: " . mysqli_error($conexao);
         }

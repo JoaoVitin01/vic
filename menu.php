@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,6 +95,42 @@
       color: gray;
     }
     
+    /* Estilo para o modal */
+    .modal {
+      display: none; /* Esconde o modal por padrão */
+      position: fixed; /* Fica posicionado fixamente na tela */
+      z-index: 1000; /* Coloca o modal na frente de outros elementos */
+      left: 0;
+      top: 0;
+      width: 100%; /* Largura total */
+      height: 100%; /* Altura total */
+      overflow: auto; /* Adiciona rolagem se necessário */
+      background-color: rgba(0,0,0,0.4); /* Fundo preto com opacidade */
+      padding-top: 60px; /* Alinhamento para dispositivos móveis */
+    }
+
+    .modal-content {
+      background-color: #fefefe; /* Fundo branco */
+      margin: 5% auto; /* Centraliza o modal */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Largura do modal */
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
   </style>
 </head>
 <body>
@@ -118,11 +156,17 @@
       </a>
     </li>
     <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="#">
+      <a class="navbar-item-inner flexbox-left" href="atrasos.php">
         <i class="material-icons">message</i>
         <span class="link-text">Mensagens</span>
       </a>
     </li>
+    <li class="navbar-item flexbox-left">
+      <a id="sairButton" class="navbar-item-inner flexbox-left" href="#">
+        <i class="material-icons">exit_to_app</i> <!-- Ícone de sair -->
+        <span class="link-text">Sair</span>
+      </a>
+     </li>
   </ul>
 </nav>
 
@@ -132,69 +176,66 @@
   <!-- cards -->
 
   <section class="articles">
-  <article>
-    <div class="article-wrapper">
-      <figure>
-        <img src="img/cad1.jpg" alt="" />
-      </figure>
-      <div class="article-body">
-        <h2>Benefícios de Ler:</h2>
-        <p>
-        Livros ampliam horizontes, apresentando novas ideias, culturas e perspectivas.
-        A leitura regular ajuda a aumentar a capacidade de foco e concentração.
-        Ler é uma ótima forma de relaxar e aliviar o estresse do dia a dia.
-        </p>
-        <a href="#" class="read-more">
-          Leia <span class="sr-only"></span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
+    <article>
+      <div class="article-wrapper">
+        <figure>
+          <img src="img/cad1.jpg" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Benefícios de Ler:</h2>
+          <p>
+          Livros ampliam horizontes, apresentando novas ideias, culturas e perspectivas.
+          A leitura regular ajuda a aumentar a capacidade de foco e concentração.
+          Ler é uma ótima forma de relaxar e aliviar o estresse do dia a dia.
+          </p>
+          <a href="#" class="read-more">
+            Leia <span class="sr-only"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
       </div>
-    </div>
-  </article>
-  <article>
-
-    <div class="article-wrapper">
-      <figure>
-      <img src="img/cad2.jpg" alt="" />
-      </figure>
-      <div class="article-body">
-        <h2>Leitura e Café:</h2>
-        <p>
-        O aroma e o sabor do café podem ajudar a criar um ambiente relaxante e propício para a leitura, enquanto a cafeína melhora a concentração.
-        
-        </p>
-        <a href="#" class="read-more">
-          Estude <span class="sr-only"></span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
+    </article>
+    <article>
+      <div class="article-wrapper">
+        <figure>
+        <img src="img/cad2.jpg" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Leitura e Café:</h2>
+          <p>
+          O aroma e o sabor do café podem ajudar a criar um ambiente relaxante e propício para a leitura, enquanto a cafeína melhora a concentração.
+          </p>
+          <a href="#" class="read-more">
+            Estude <span class="sr-only"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
       </div>
-    </div>
-  </article>
-  <article>
-
-    <div class="article-wrapper">
-      <figure>
-      <img src="img/cad3.jpg" alt="" />
-      </figure>
-      <div class="article-body">
-        <h2>Riacho dos Livros: </h2>
-        <p>
-        Um riacho serpenteante atravessa uma paisagem exuberante, com árvores antigas e flores coloridas nas margens, onde livros empilhados criam o cenário perfeito para leitura ao ar livre.
-        </p>
-        <a href="#" class="read-more">
-          Conquiste <span class="sr-only"></span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
+    </article>
+    <article>
+      <div class="article-wrapper">
+        <figure>
+        <img src="img/cad3.jpg" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Riacho dos Livros: </h2>
+          <p>
+          Um riacho serpenteante atravessa uma paisagem exuberante, com árvores antigas e flores coloridas nas margens, onde livros empilhados criam o cenário perfeito para leitura ao ar livre.
+          </p>
+          <a href="#" class="read-more">
+            Conquiste <span class="sr-only"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
       </div>
-    </div>
-  </article>
-</section>
+    </article>
+  </section>
  
   <!-- Carrossel de imagens -->
   <div class="carousel-container">
@@ -215,9 +256,18 @@
     <div class="carousel-btn next" onclick="nextSlide()">&#10095;</div>
   </div>
   
-
-<h6>Vic Higt-Tech</h6>
+  <h6>Vic Higt-Tech</h6>
 </main>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Você tem certeza de que deseja sair?</p>
+    <button onclick="confirmExit()">Sim</button>
+    <button onclick="closeModal()">Não</button>
+  </div>
+</div>
 
 <script>
   let slideIndex = 0;
@@ -245,6 +295,40 @@
   // Iniciar o carrossel
   showSlides();
   setInterval(showSlides, 15000); // Altere o valor para controlar a velocidade de transição
+
+  // Obter o modal
+  var modal = document.getElementById("myModal");
+
+  // Obter o botão de sair e o elemento <span> que fecha o modal
+  var btn = document.getElementById("sairButton");
+  var span = document.getElementsByClassName("close")[0];
+
+  // Quando o usuário clicar no botão de sair, abra o modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // Quando o usuário clicar no <span> (x), feche o modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Quando o usuário clicar fora do modal, feche-o
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Função para confirmar a saída
+  function confirmExit() {
+    window.location.href = "logout.php";
+  }
+
+  // Função para fechar o modal
+  function closeModal() {
+    modal.style.display = "none";
+  }
 </script>
 
 </body>

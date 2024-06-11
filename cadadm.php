@@ -20,7 +20,7 @@
         
         
         
-        $sql = "INSERT INTO usuarios(nome,email,senha)
+        $sql = "INSERT INTO admusuario(nome,email,senha)
         VALUES('$nome','$email','$senha')";
         if($sql = mysqli_query($conexao,$sql)){
 

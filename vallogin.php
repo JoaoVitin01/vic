@@ -1,4 +1,7 @@
 <?php
+// Iniciar a sessão
+session_start();
+
 // Incluir arquivo de configuração do banco de dados
 include_once 'conexao.php';
 
@@ -11,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $senha = $_POST['senha'];
 
         // Consultar o banco de dados para encontrar o usuário com o email fornecido
-        $sql = "SELECT * FROM `usuarios` WHERE `email` = '$email'";
+        $sql = "SELECT * FROM `admusuario` WHERE `email` = '$email'";
         $result = mysqli_query($conexao, $sql);
 
         if ($result) {
@@ -20,7 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $row = mysqli_fetch_assoc($result);
                 // Verificar se a senha está correta
                 if (password_verify($senha, $row['senha'])) {
-                    // Senha correta, redirecionar para página de sucesso
+                    // Senha correta, iniciar a sessão e redirecionar para página de sucesso
+                    $_SESSION['usuario_id'] = $row['id']; // Armazenar o ID do usuário na sessão
+                    $_SESSION['usuario_email'] = $email; // Armazenar o email do usuário na sessão
                     header("Location: menu.php");
                     exit();
                 } else {

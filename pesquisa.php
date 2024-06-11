@@ -189,15 +189,38 @@
 
                 <form class="search-form" action="pesquisa.php" method="post">
                     <input class="search-input" type="search" name="buscas" placeholder="Digite o nome do aluno">
+                    <?php
+                    include "conexao.php";
+
+                    $sqlTurmas = "SELECT DISTINCT seriealuno FROM registro";
+                    $resultTurmas = mysqli_query($conexao, $sqlTurmas);
+
+                    $turmas = array();
+                    while ($row = mysqli_fetch_assoc($resultTurmas)) {
+                        $turmas[] = $row['seriealuno'];
+                    }
+                    ?>
+                    <select name="turma">
+                        <option value="">Selecione a turma</option>
+                        <?php foreach ($turmas as $turma) : ?>
+                            <option value="<?php echo $turma; ?>"><?php echo $turma; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                     <button class="search-button" type="submit">Pesquisar</button>
                 </form>
 
                 <?php
                 $pesquisas = $_POST['buscas'] ?? '';
+                $turmaSelecionada = $_POST['turma'] ?? '';
                 include "conexao.php";
 
-                $sqli = "SELECT * FROM registro WHERE nomealuno LIKE '%$pesquisas%'";
-                $dados = mysqli_query($conexao, $sqli);
+                $sql = "SELECT * FROM registro WHERE nomealuno LIKE '%$pesquisas%'";
+
+                if (!empty($turmaSelecionada)) {
+                    $sql .= " AND seriealuno = '$turmaSelecionada'";
+                }
+
+                $dados = mysqli_query($conexao, $sql);
 
                 if (!$dados) {
                     echo "Erro na consulta SQL: " . mysqli_error($conexao);
