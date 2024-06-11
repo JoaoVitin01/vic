@@ -73,12 +73,12 @@
         }
 
         .btn-info {
-            background-color: #b2ebf2; /* Novo background-color para btn-info */
+            background-color: #b8bab6; /* Novo background-color para btn-info */
             color: #333; /* Novo color para btn-info */
         }
 
         .btn-info:hover {
-            background-color: #80deea; /* Novo background-color no hover para btn-info */
+            background-color: #979797; /* Novo background-color no hover para btn-info */
         }
 
         .btn-success {
@@ -89,7 +89,7 @@
 }
 
         .btn-success:hover {
-            background-color:  #b8bab7; /* Novo background-color no hover para btn-success */
+            background-color: #979797; /* Novo background-color no hover para btn-success */
         }
 
         .btn-danger {
@@ -118,7 +118,7 @@
             background-color: #b8bab6; /* Novo background-color para btn dentro do modal */
             border-color: #c5e1a5; /* Novo border-color para btn dentro do modal */
         }
-
+       
         /* Estilo para o modal */
         .modal {
             max-width: 90%;
@@ -134,7 +134,7 @@
         }
 
         .modal-close.btn:hover {
-            background-color: #c5e1a5; /* Novo background-color no hover para btn dentro do modal */
+            background-color: #b8bab6; /* Novo background-color no hover para btn dentro do modal */
         }
 
         p {
@@ -165,7 +165,7 @@
         }
 
         .search-button:hover {
-            background-color: #b8bab7; /* Novo background-color no hover para search-button */
+            background-color: #979797; /* Novo background-color no hover para search-button */
         }
 
         @media only screen and (max-width: 600px) {
