@@ -86,7 +86,7 @@
             $sqli = "INSERT INTO registro (nomealuno, seriealuno, cursoaluno, livro, Rtombo, datemprestimo, datdevolucao)
                      VALUES ('$nomes', '$seriealus', '$cursoalus', '$livros', '$rtombos', '$datemprs', '$datdevos')";
             if (mysqli_query($conexao, $sqli)) {
-              $mensagem = "$nomes cadastrado com sucesso!";
+              $mensagem = "registo feito com sucesso!";
               $classe_alerta = 'alert-success';
             } else {
               $mensagem = "Erro ao cadastrar usuário: " . mysqli_error($conexao);

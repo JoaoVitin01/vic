@@ -36,7 +36,7 @@
 <body>
 
   <div class="container">
-    <h1>Devoluções </h1>
+    <h1>Atrasos</h1>
 
     <?php
     include "conexao.php";
