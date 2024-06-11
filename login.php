@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Login - Biblioteca</title>
+    <link rel="stylesheet" href="main.css"> <!-- Inclui o arquivo de estilos externo -->
 </head>
 <body>
-
-
-    <div class="page">
-        <form action="vallogin.php" method="POST" class="formLogin">
-            <h1>Login</h1>
-            <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" placeholder="Digite seu nome" autofocus="true" />
-            <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Digite seu email" />
-            <label for="password">Senha</label>
-            <input type="password" name="senha" placeholder="Digite sua senha" />
-            <a href="#">Esqueci minha senha</a>
-            <input type="submit" value="Acessar" class="btn" />
+    <div class="page"> <!-- Div para envolver o conteúdo do formulário -->
+        <form action="vallogin.php" method="POST" class="formLogin"> <!-- Formulário de login -->
+            <h1>Login</h1> <!-- Título do formulário -->
+            <p>Digite os seus dados de acesso no campo abaixo.</p> <!-- Descrição do formulário -->
+            <label for="nome">Nome</label> <!-- Rótulo para o campo Nome -->
+            <input type="text" name="nome" placeholder="Digite seu nome" autofocus="true" /> <!-- Campo de texto para o nome -->
+            <label for="email">Email</label> <!-- Rótulo para o campo Email -->
+            <input type="email" name="email" placeholder="Digite seu email" /> <!-- Campo de email -->
+            <label for="password">Senha</label> <!-- Rótulo para o campo Senha -->
+            <input type="password" name="senha" placeholder="Digite sua senha" /> <!-- Campo de senha -->
+            
+            <input type="submit" value="Acessar" class="btn" /> <!-- Botão de envio do formulário -->
         </form>
     </div>
 </body>

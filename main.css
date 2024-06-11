@@ -1,99 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+/* Estilização do corpo da página */
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #023047
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove o padding padrão */
+    font-family: Arial, sans-serif; /* Define a família de fontes */
+    /* Configuração do plano de fundo */
+    background: url('biblioteca.jpg') no-repeat center center fixed; /* Define a imagem de fundo */
+    background-size: cover; /* Cobrir todo o espaço disponível */
+    height: 100vh; /* Define a altura do corpo como 100% da altura da tela */
+    display: flex; /* Flexbox para centralizar o conteúdo vertical e horizontalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    color: #333; /* Cor do texto */
 }
 
+/* Estilização do contêiner principal */
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-color:rgb(234, 189, 130);
-    
-
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com transparência */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 20px; /* Espaçamento interno */
+    max-width: 400px; /* Largura máxima */
+    width: 100%; /* Largura total */
 }
 
+/* Estilização do formulário */
 .formLogin {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(245, 213, 171);
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 10px 10px 40px burlywood;
-    gap: 5px
+    display: flex; /* Flexbox para layout em coluna */
+    flex-direction: column; /* Disposição em coluna */
 }
 
-.areaLogin img {
-    width: 420px;
-}
-
+/* Estilização do título do formulário */
 .formLogin h1 {
-    padding: 0;
-    margin: 0;
-    font-weight: 500;
-    font-size: 2.3em;
+    margin-bottom: 20px; /* Margem inferior */
+    font-size: 24px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    color: #333; /* Cor do texto */
 }
 
+/* Estilização do texto do formulário */
 .formLogin p {
-    display: inline-block;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* Margem inferior */
+    text-align: center; /* Centraliza o texto */
+    color: #555; /* Cor do texto */
 }
 
-.formLogin input {
-    padding: 15px;
-    font-size: 14px;
-    border: 1px solid rgb(237, 150, 37);
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border-radius: 10px;
-    transition: all linear 160ms;
-    outline: none;
-}
-
-.formLogin input:focus {
-    border: 1px solid #666;
-}
-
+/* Estilização dos rótulos do formulário */
 .formLogin label {
-    font-size: 14px;
-    font-weight: 600;
+    margin-bottom: 5px; /* Margem inferior */
+    font-weight: bold; /* Negrito */
+    color: #333; /* Cor do texto */
 }
 
+/* Estilização dos campos de entrada do formulário */
+.formLogin input[type="text"],
+.formLogin input[type="email"],
+.formLogin input[type="password"] {
+    margin-bottom: 15px; /* Margem inferior */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Borda arredondada */
+    font-size: 16px; /* Tamanho da fonte */
+    background-color: #f9f9f9; /* Cor de fundo */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilização do texto de espaço reservado nos campos de entrada */
+.formLogin input[type="text"]::placeholder,
+.formLogin input[type="email"]::placeholder,
+.formLogin input[type="password"]::placeholder {
+    color: #aaa; /* Cor do texto do espaço reservado */
+}
+
+/* Estilização dos links no formulário */
 .formLogin a {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #666;
-    transition: all linear 160ms;
+    margin-bottom: 15px; /* Margem inferior */
+    color: #666; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove decoração de link */
 }
 
+/* Estilização dos links ao passar o mouse */
 .formLogin a:hover {
-    color: #61a8d6;
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
 }
 
-.btn {
-    background-color: hsl(52, 100%, 89%);
-    color: #000000;
-    font-size: 14px;
-    font-weight: 600;   
-    border: none !important;
-    transition: all linear 160ms;
-    cursor: pointer;
-    margin: 0 !important;
-
+/* Estilização do botão de envio */
+.formLogin .btn {
+    padding: 10px; /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    background-color: #555; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de apontar */
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    background-color: #ffeba5;
-
+/* Estilização do botão de envio ao passar o mouse */
+.formLogin .btn:hover {
+    background-color: #333; /* Cor de fundo ao passar o mouse */
 }

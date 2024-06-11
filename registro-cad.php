@@ -111,7 +111,7 @@
         <a href="pesquisa.php" class="btn btn-pesquisa">Ver Registro</a>
       <?php endif; ?>
     <?php endif; ?>
-
+        <!-- carrossel de imagens -->
     <form action="" method="post">
       <div class=>
         <label for="nomealuno" class="form-label">Nome do Aluno</label>

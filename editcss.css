@@ -1,51 +1,56 @@
+/* Estilização do corpo da página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+    font-family: Arial, sans-serif; /* Define a família de fontes para Arial, com fallback para sans-serif */
+    margin: 0; /* Remove as margens padrão do body */
+    padding: 0; /* Remove o padding padrão do body */
+    background-color: #f5f5f5; /* Define a cor de fundo da página como um cinza claro */
 }
 
+/* Estilização dos títulos h2 */
 h2 {
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
+    text-align: center; /* Centraliza o texto dos títulos h2 */
+    margin-top: 20px; /* Adiciona uma margem superior de 20px */
+    color: #333; /* Define a cor do texto como um cinza escuro */
 }
 
+/* Estilização dos formulários */
 form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 1300px;
-    /* Limitando a largura máxima do formulário */
-    margin: 0 auto;
-    /* Centralizando horizontalmente */
+    background-color: #fff; /* Define a cor de fundo do formulário como branco */
+    padding: 20px; /* Adiciona um padding de 20px ao redor do formulário */
+    border-radius: 8px; /* Arredonda os cantos do formulário */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve ao formulário */
+    max-width: 1300px; /* Limita a largura máxima do formulário a 1300px */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente */
 }
 
+/* Estilização dos rótulos (labels) */
 label {
-    display: block;
-    margin-bottom: 5px;
+    display: block; /* Faz os rótulos serem exibidos como blocos */
+    margin-bottom: 5px; /* Adiciona uma margem inferior de 5px aos rótulos */
 }
 
+/* Estilização dos campos de texto */
 input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 100%; /* Faz os campos de texto ocuparem 100% da largura disponível */
+    padding: 10px; /* Adiciona um padding de 10px aos campos de texto */
+    margin-bottom: 20px; /* Adiciona uma margem inferior de 20px aos campos de texto */
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px com cor cinza clara aos campos de texto */
+    border-radius: 4px; /* Arredonda os cantos dos campos de texto */
 }
 
+/* Estilização do botão de envio */
 input[type="submit"] {
-    background-color: #b8bab6;
-    color: rgb(0, 0, 0);
-    padding: 15px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
+    background-color: #b8bab6; /* Define a cor de fundo do botão de envio */
+    color: rgb(0, 0, 0); /* Define a cor do texto do botão de envio como preto */
+    padding: 15px 20px; /* Adiciona um padding de 15px no topo e na base, e 20px nas laterais do botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 4px; /* Arredonda os cantos do botão */
+    cursor: pointer; /* Altera o cursor para um ponteiro ao passar sobre o botão */
+    font-size: 16px; /* Define o tamanho da fonte do botão */
+    width: 100%; /* Faz o botão ocupar 100% da largura disponível */
 }
 
+/* Estilização do botão de envio ao passar o mouse */
 input[type="submit"]:hover {
-    background-color: #b8bab7;
+    background-color: #b8bab7; /* Altera a cor de fundo do botão ao passar o mouse */
 }

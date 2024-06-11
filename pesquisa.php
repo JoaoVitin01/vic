@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -196,6 +196,8 @@
                     <input class="search-input" type="search" name="buscas" placeholder="Digite o nome do aluno">
                     <?php
                     include "conexao.php";
+                   
+                    
 
                     $sqlTurmas = "SELECT DISTINCT seriealuno FROM registro";
                     $resultTurmas = mysqli_query($conexao, $sqlTurmas);
