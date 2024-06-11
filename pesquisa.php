@@ -81,23 +81,23 @@
         }
 
         .btn-success {
-            background-color: bisque;
+            background-color: #28a745;
         }
 
         .btn-success:hover {
-            background-color: blanchedalmond;
+            background-color: #218838;
         }
 
         .btn-danger {
-            background-color: rgb(238, 44, 44);
+            background-color: #dc3545;
         }
 
         .btn-danger:hover {
-            background-color: rgb(219, 64, 64);
+            background-color: #c82333;
         }
 
         .btn-salvar-pdf {
-            background-color: gray;
+            background-color: #007bff;
             min-width: 100px;
             padding: 8px 16px;
             line-height: 25px;
@@ -105,12 +105,12 @@
         }
 
         .btn-salvar-pdf:hover {
-            background-color: dimgrey;
+            background-color: #0056b3;
         }
 
         .modal-close.btn {
-            background-color: bisque;
-            border-color: #ddd;
+            background-color: #28a745;
+            border-color: #218838;
         }
 
         /* Estilo para o modal */
@@ -128,7 +128,7 @@
         }
 
         .modal-close.btn:hover {
-            background-color: antiquewhite;
+            background-color: #218838;
         }
 
         p {
@@ -153,13 +153,13 @@
             padding: 8px 16px;
             border: none;
             border-radius: 4px;
-            background-color: bisque;
-            color: #333;
+            background-color: #007bff;
+            color: #fff;
             cursor: pointer;
         }
 
         .search-button:hover {
-            background-color: antiquewhite;
+            background-color: #0056b3;
         }
 
         @media only screen and (max-width: 600px) {
@@ -253,9 +253,9 @@
                                     <td><?php echo htmlspecialchars($linha['datemprestimo']); ?></td>
                                     <td><?php echo htmlspecialchars($linha['datdevolucao']); ?></td>
                                     <td>
-                                        <a href="editar.php?id_registro=<?php echo $linha['cod_rigistro']; ?>" class="btn btn-success">Editar</a>
-                                        <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_rigistro']; ?>)" class="btn btn-danger">Excluir</a>
-                                        <button class="btn btn-salvar-pdf modal-trigger" data-target="modal-pdf">Salvar em PDF</button>
+                                        <a href="editar.php?id_registro=<?php echo $linha['cod_rigistro']; ?>" class="btn btn-success"><i class="material-icons">edit</i></a>
+                                        <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_rigistro']; ?>)" class="btn btn-danger"><i class="material-icons">delete</i></a>
+                                        <button class="btn btn-salvar-pdf modal-trigger" data-target="modal-pdf"><i class="material-icons">save_alt</i></button>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
@@ -276,7 +276,7 @@
                     <p>Você tem certeza que deseja excluir este registro?</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="modal-close btn">Cancelar</a>
+                    <a href="#" class="modal-close btn btn-info">Cancelar</a>
                     <a id="excluir-btn" href="#" class="btn btn-danger">Excluir</a>
                 </div>
             </div>
@@ -288,8 +288,8 @@
                     <p>Tem certeza de que deseja salvar a lista em PDF?</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
-                    <a href="salvar_pdf.php" class="modal-close waves-effect waves-green btn-flat">Salvar</a>
+                    <a href="#" class="modal-close waves-effect waves-green btn-flat btn-info">Cancelar</a>
+                    <a href="salvar_pdf.php" class="modal-close waves-effect waves-green btn-flat btn-success">Salvar</a>
                 </div>
             </div>
 

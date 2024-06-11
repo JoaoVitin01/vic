@@ -505,3 +505,176 @@
 </body>
 
 </html>
+
+
+
+
+
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-right: 5px;
+            text-decoration: none;
+            color: #333;
+            background-color: #007bff;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            min-width: 100px;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-info {
+            background-color: #17a2b8;
+        }
+
+        .btn-info:hover {
+            background-color: #117a8b;
+        }
+
+        .btn-success {
+            background-color: bisque;
+        }
+
+        .btn-success:hover {
+            background-color: blanchedalmond;
+        }
+
+        .btn-danger {
+            background-color: rgb(238, 44, 44);
+        }
+
+        .btn-danger:hover {
+            background-color: rgb(219, 64, 64);
+        }
+
+        .btn-salvar-pdf {
+            background-color: gray;
+            min-width: 100px;
+            padding: 8px 16px;
+            line-height: 25px;
+            margin-right: 5px;
+        }
+
+        .btn-salvar-pdf:hover {
+            background-color: dimgrey;
+        }
+
+        .modal-close.btn {
+            background-color: bisque;
+            border-color: #ddd;
+        }
+
+        /* Estilo para o modal */
+        .modal {
+            max-width: 90%;
+        }
+
+        .modal-content {
+            padding: 20px;
+        }
+
+        .modal-footer {
+            padding: 10px 20px;
+            justify-content: flex-end;
+        }
+
+        .modal-close.btn:hover {
+            background-color: antiquewhite;
+        }
+
+        p {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .search-form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-input {
+            padding: 8px;
+            width: 60%;
+            max-width: 400px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .search-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: bisque;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: antiquewhite;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                max-width: 95%;
+            }
+
+            .search-input {
+                width: 100%;
+                max-width: none;
+            }
+            h1 {
+                font-size: 20px;
+            }
+        }
