@@ -95,41 +95,60 @@
       color: gray;
     }
     
-    /* Estilo para o modal */
-    .modal {
-      display: none; /* Esconde o modal por padrão */
-      position: fixed; /* Fica posicionado fixamente na tela */
-      z-index: 1000; /* Coloca o modal na frente de outros elementos */
-      left: 0;
-      top: 0;
-      width: 100%; /* Largura total */
-      height: 100%; /* Altura total */
-      overflow: auto; /* Adiciona rolagem se necessário */
-      background-color: rgba(0,0,0,0.4); /* Fundo preto com opacidade */
-      padding-top: 60px; /* Alinhamento para dispositivos móveis */
-    }
+     /* Estilo para o modal */
+  .modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed; /* Fica posicionado fixamente na tela */
+    z-index: 1000; /* Coloca o modal na frente de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Adiciona rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo preto com opacidade */
+    padding-top: 60px; /* Alinhamento para dispositivos móveis */
+  }
 
-    .modal-content {
-      background-color: #fefefe; /* Fundo branco */
-      margin: 5% auto; /* Centraliza o modal */
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%; /* Largura do modal */
-    }
+  .modal-content {
+    background-color: #fefefe; /* Fundo branco */
+    margin: 5% auto; /* Centraliza o modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
 
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
+  .close:hover {
+    color: black;
+  }
+
+  /* Estilo para os botões dentro do modal */
+  .btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn-modal {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn-modal:hover {
+    background-color: #ddd;
+  }
     
   </style>
 </head>
@@ -264,11 +283,12 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>Você tem certeza de que deseja sair?</p>
-    <button onclick="confirmExit()">Sim</button>
-    <button onclick="closeModal()">Não</button>
+    <div class="btn-container">
+      <button class="btn-modal" onclick="confirmExit()">Sim</button>
+      <button class="btn-modal" onclick="closeModal()">Não</button>
+    </div>
   </div>
 </div>
-
 <script>
   let slideIndex = 0;
   const slides = document.querySelectorAll('.carousel-slide img');
