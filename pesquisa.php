@@ -96,6 +96,18 @@
             background-color: rgb(219, 64, 64);
         }
 
+        .btn-salvar-pdf {
+            background-color: gray;
+            min-width: 100px;
+            padding: 8px 16px;
+            line-height: 25px;
+            margin-right: 5px;
+        }
+
+        .btn-salvar-pdf:hover {
+            background-color: dimgrey;
+        }
+
         .modal-close.btn {
             background-color: bisque;
             border-color: #ddd;
@@ -159,12 +171,6 @@
                 width: 100%;
                 max-width: none;
             }
-
-            .btn {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-
             h1 {
                 font-size: 20px;
             }
@@ -175,7 +181,7 @@
 <body>
 
     <div class="container">
-        <a href="menu.php"><img src="img/return.png"></a>
+        <a href="menu.php"><img src="img/return.png" alt="Voltar"></a>
         <div class="row">
             <div class="col">
 
@@ -216,32 +222,17 @@
                         <tbody>
                             <?php while ($linha = mysqli_fetch_assoc($dados)) : ?>
                                 <tr>
-                                    <td><?php echo $linha['nomealuno']; ?></td>
-                                    <td><?php echo $linha['seriealuno']; ?></td>
-                                    <td><?php echo $linha['cursoaluno']; ?></td>
-                                    <td><?php echo $linha['livro']; ?></td>
-                                    <td><?php echo $linha['Rtombo']; ?></td>
-                                    <td><?php echo $linha['datemprestimo']; ?></td>
-                                    <td><?php echo $linha['datdevolucao']; ?></td>
+                                    <td><?php echo htmlspecialchars($linha['nomealuno']); ?></td>
+                                    <td><?php echo htmlspecialchars($linha['seriealuno']); ?></td>
+                                    <td><?php echo htmlspecialchars($linha['cursoaluno']); ?></td>
+                                    <td><?php echo htmlspecialchars($linha['livro']); ?></td>
+                                    <td><?php echo htmlspecialchars($linha['Rtombo']); ?></td>
+                                    <td><?php echo htmlspecialchars($linha['datemprestimo']); ?></td>
+                                    <td><?php echo htmlspecialchars($linha['datdevolucao']); ?></td>
                                     <td>
-                                        <a href="editar.php?id_registro=<?php echo $linha['cod_registro']; ?>" class="btn btn-success">Editar</a>
-                                        <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_registro']; ?>)" class="btn btn-danger">Excluir</a>
-                                        <button class="waves-effect waves-light btn modal-trigger btn-salvar-pdf" data-target="modal-pdf">Salvar em PDF</button>
-
-<!-- Modal de confirmação para salvar em PDF -->
-<div id="modal-pdf" class="modal">
-    <div class="modal-content">
-        <h4>Salvar em PDF</h4>
-        <p>Tem certeza de que deseja salvar a lista em PDF?</p>
-    </div>
-    <div class="modal-footer">
-        <a href="#" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
-        <a href="salvar_pdf.php" class="modal-close waves-effect waves-green btn-flat">Salvar</a>
-    </div>
-</div>
-
-                                    
-                                    
+                                        <a href="editar.php?id_registro=<?php echo $linha['cod_rigistro']; ?>" class="btn btn-success">Editar</a>
+                                        <a href="#" onclick="confirmarExclusao(<?php echo $linha['cod_rigistro']; ?>)" class="btn btn-danger">Excluir</a>
+                                        <button class="btn btn-salvar-pdf modal-trigger" data-target="modal-pdf">Salvar em PDF</button>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
@@ -267,21 +258,34 @@
                 </div>
             </div>
 
-            <!-- Scripts JavaScript -->
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="js/materialize.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $('.modal').modal();
-                });
+            <!-- Modal de confirmação para salvar em PDF -->
+            <div id="modal-pdf" class="modal">
+                <div class="modal-content">
+                    <h4>Salvar em PDF</h4>
+                    <p>Tem certeza de que deseja salvar a lista em PDF?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                    <a href="salvar_pdf.php" class="modal-close waves-effect waves-green btn-flat">Salvar</a>
+                </div>
+            </div>
 
-                function confirmarExclusao(id_registro) {
-                    $('#excluir-btn').attr('href', 'excluir_registro.php?id_registro=' + id_registro);
-                    $('#modal-confirmacao').modal('open');
-                }
-            </script>
         </div>
     </div>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+
+        function confirmarExclusao(id_registro) {
+            $('#excluir-btn').attr('href', 'excluir_registro.php?id_registro=' + id_registro);
+            $('#modal-confirmacao').modal('open');
+        }
+    </script>
 </body>
 
 </html>

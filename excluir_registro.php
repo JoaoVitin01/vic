@@ -10,7 +10,7 @@ if (isset($_GET['id_registro'])) {
     // Verifique se a conexão foi estabelecida
     if ($conexao) {
         // Consulta SQL para excluir o registro com o ID fornecido
-        $sql = "DELETE FROM registro WHERE cod_registro = $id_registro";
+        $sql = "DELETE FROM registro WHERE cod_rigistro = $id_registro"; // Aqui corrigimos o nome do campo
 
         // Execute a consulta SQL
         if (mysqli_query($conexao, $sql)) {
